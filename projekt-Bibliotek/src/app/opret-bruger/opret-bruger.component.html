@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- Sideens hoved -->
+    <!-- Her kan du inkludere stylesheets og scripts -->
+  </head>
+  <body>
+    <!-- Wrapper til hele opret-bruger siden -->
+    <div class="opret-bruger-page">
+      <!-- 
+        Container: Dette element fungerer som en overordnet beholder 
+        for hele opret-bruger formularen. Det kan bruges til at styre
+        layout og styling for hele formularen.
+      -->
+      <div class="opret-bruger-container">
+        <!-- 
+          Overskrift: En H2-overskrift, der giver brugeren klar indikation 
+          af, at de befinder sig på en opret-bruger side.
+        -->
+        <h2>Opret Bruger</h2>
+      
+        <!-- 
+          Formular: Den egentlige formular, der indeholder alle inputfelter.
+          Formularen er bundet til Angular med `(ngSubmit)="onSubmit()"` for at håndtere indsendelse.
+          `#userForm="ngForm"` gør det muligt at bruge Angulars formular-API.
+        -->
+        <form (ngSubmit)="onSubmit()" #userForm="ngForm" class="opret-bruger-form">
+          <!-- 
+            Input til Fornavn:
+            - `[(ngModel)]="user.firstName"` binder inputtet til `user.firstName` i Angular.
+            - `required` sikrer, at feltet skal udfyldes før formularen kan sendes.
+          -->
+          <div class="input-boxFirstName">
+            <label for="firstName">Fornavn:</label>
+            <input
+              id="firstName"
+              name="firstName"
+              [(ngModel)]="user.firstName"
+              placeholder="Indtast Fornavn"
+              class="form-input"
+              required
+            />
+          </div>
+      
+          <!-- 
+            Input til E-mail:
+            - `type="email"` tilføjer browser-validering for at sikre korrekt format.
+            - `[(ngModel)]="user.email"` binder feltet til `user.email` i Angular.
+            - `required` gør feltet obligatorisk.
+          -->
+          <div class="input-boxEmail">
+            <label for="email">E-mail:</label>
+            <input
+              id="email"
+              name="email"
+              [(ngModel)]="user.email"
+              placeholder="Indtast E-mail"
+              class="form-input"
+              type="email"
+              required
+            />
+          </div>
+      
+          <!-- 
+            Input til Telefonnummer:
+            - `[(ngModel)]="user.phoneNumber"` binder inputtet til `user.phoneNumber` i Angular.
+            - `required` gør feltet obligatorisk.
+          -->
+          <div class="input-boxPhoneNumber">
+            <label for="phoneNumber">Telefonnummer:</label>
+            <input
+              id="phoneNumber"
+              name="phoneNumber"
+              [(ngModel)]="user.phoneNumber"
+              placeholder="Indtast Telefonnummer"
+              class="form-input"
+              required
+            />
+          </div>
+      
+          <!-- 
+            Input til Adgangskode:
+            - `type="password"` skjuler brugerens indtastning for øget sikkerhed.
+            - `[(ngModel)]="user.password"` binder feltet til `user.password` i Angular.
+            - `required` gør feltet obligatorisk.
+          -->
+          <div class="input-boxPassword">
+            <label for="password">Adgangskode:</label>
+            <input
+              id="password"
+              name="password"
+              [(ngModel)]="user.password"
+              placeholder="Indtast Adgangskode"
+              class="form-input"
+              type="password"
+              required
+            />
+          </div>
+      
+          <!-- 
+            Knapper til handlinger:
+            - Opret Bruger-knappen sender formularen, fordi `type="submit"`.
+            - Log In-knappen navigerer til login-siden ved hjælp af Angulars `routerLink`.
+          -->
+          <div class="box-knapper">
+            <!-- Knap til at oprette bruger -->
+            <button type="submit" class="box-opretbrugerknap">Opret Bruger</button>
+
+            <!-- Knap til at navigere til login -->
+            <button type="button" class="box-loginknap" routerLink="/login">Log In</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>

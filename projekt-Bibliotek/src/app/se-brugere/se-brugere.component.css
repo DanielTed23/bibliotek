@@ -1,0 +1,29 @@
+/* se-brugere.component.css */
+.user-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 115px;
+  }
+  
+  .user-list th, .user-list td {
+    padding: 10px;
+    border: 1px solid #ddd;
+  }
+  
+  .user-list th {
+    background-color: #f4f4f4;
+  }
+  
+  .user-list button {
+    background-color: #ff6666;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .user-list button:hover {
+    background-color: #cc0000;
+  }
+  

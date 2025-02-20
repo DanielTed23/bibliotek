@@ -1,0 +1,108 @@
+/*  Topbar - Øverste navigationsmenu */
+.topbar {
+  position: fixed; /* Fastgør topbaren til toppen af skærmen */
+  top: 0;
+  left: 0;
+  width: 100%; /* Sørger for, at den fylder hele bredden */
+  background-color: #f6f5f0; /* Lysegrå baggrundsfarve - BEHOLDER FARVEN */
+  display: flex; /* Bruger flexbox til at justere indholdet */
+  align-items: center; /* Centrerer elementer lodret */
+  justify-content: flex-end; /* Placerer knapperne til højre */
+  padding: 5px 15px; /* Indre afstand */
+  z-index: 1000; /* Sørger for, at topbaren er øverst */
+  height: 90px; /* Fast højde */
+  box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.2); /* STÆRKERE SKYGGEEFFEKT */
+  margin-left: -23px; /* Justerer placeringen lidt mod venstre */
+}
+
+
+/*  Knapper i topbaren - Fælles styling */
+.topbar-btnTilbage,
+.topbar-btnLogInd,
+.topbar-btnUr {
+  display: flex; /* Bruger flexbox til at arrangere ikon + tekst */
+  flex-direction: column; /* Ikon over tekst */
+  align-items: center; /* Centrerer ikon og tekst horisontalt */
+  justify-content: center; /* Centrerer dem lodret */
+  background-color: #000000; /* Sort baggrund */
+  color: white; /* Hvid tekst */
+  border: none; /* Ingen kantlinje */
+  padding: 10px 20px; /* Indre afstand for større klikområde */
+  border-radius: 5px; /* Runde hjørner */
+  font-size: 1rem; /* Standard tekststørrelse */
+  cursor: pointer; /* Skifter musen til en hånd (peger) */
+  transition: background-color 0.3s ease; /* Glidende farveskift ved hover */
+  margin-left: 20px; /* Giver mellemrum mellem knapperne */
+}
+
+/*  Stil for ikoner i topbarknapper */
+.topbar-btnTilbage .icon,
+.topbar-btnLogInd .icon,
+.topbar-btnUr .icon {
+  font-size: 1.3rem; /* Størrelse på ikonet */
+  margin-bottom: 5px; /* Afstand mellem ikon og tekst */
+}
+
+/*  Hover-effekter for knapper */
+.topbar-btnTilbage:hover {
+  background-color: #cc1d1d; /* Rød baggrund ved hover */
+}
+
+.topbar-btnLogInd:hover,
+.topbar-btnUr:hover {
+  background-color: #21c954; /* Grøn baggrund ved hover */
+}
+
+/*  bjælke - Udtræksmenu til åbningstider */
+.Bjaelke {
+  position: fixed; /* Gør bjælken fast */
+  top: 0; /* Starter fra toppen af skærmen */
+  right: -300px; /* Starter uden for skærmen */
+  width: 300px; /* Fast bredde */
+  height: 100%; /* Fylder hele højden */
+  background-color: #ffffff; /* Hvid baggrund */
+  box-shadow: -2px 0 6px rgba(0, 0, 0, 0.2); /* Skyggeeffekt */
+  overflow-y: auto; /* Gør det muligt at scrolle, hvis der er meget tekst */
+  transition: right 0.3s ease; /* Glidende overgang */
+  z-index: 1000; /* Sikrer, at den ligger øverst */
+}
+
+/*  Når bjælken er åben */
+.Bjaelke.open {
+  right: 0; /* Skubber bjælken ind på skærmen */
+}
+
+/*  Header i bjælke */
+.Bjaelke-header {
+  display: flex; /* Bruger flexbox */
+  justify-content: space-between; /* Tekst til venstre, luk-knap til højre */
+  align-items: center; /* Centrerer vertikalt */
+  padding: 10px 20px; /* Indre afstand */
+  background-color: #f6f5f0; /* Baggrundsfarve */
+  border-bottom: 1px solid #ddd; /* Tynd grå linje mellem header og indhold */
+  font-weight: bold; /* Gør teksten fed */
+}
+
+/*  Tekstindhold i bjælke */
+.Bjaelke-Text {
+  padding: 20px; /* Indre afstand */
+  font-size: 1rem; /* Standard tekststørrelse */
+  line-height: 1.5; /* Gør teksten lettere at læse */
+}
+
+/*  Luk-knap i bjælke */
+.BjaelkeTilbage-btn {
+  display: flex; /* Bruger flexbox */
+  justify-content: center; /* Centrerer knappen horisontalt */
+  align-items: center; /* Centrerer knappen vertikalt */
+  background: none; /* Ingen baggrund */
+  border: none; /* Ingen kant */
+  font-size: 1.2rem; /* Gør knappen lidt større */
+  cursor: pointer; /* Gør det tydeligt, at den er klikbar */
+  border-radius: 5px; /* Runde hjørner */
+  background-color: #cc1d1d; /* Rød baggrund */
+  width: 22px; /* Gør knappen firkantet */
+  height: 22px;
+  transform: translateY(-2px); /* Løfter "X" lidt op */
+}
+

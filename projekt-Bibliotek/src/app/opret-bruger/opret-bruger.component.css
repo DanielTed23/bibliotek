@@ -1,0 +1,128 @@
+
+
+
+
+/* Hele opret-bruger siden */
+.opret-bruger-page {
+    display: flex; /* Bruger flexbox til centrering */
+    justify-content: center; /* Centrerer formularen horisontalt */
+    align-items: center; /* Centrerer formularen lodret */
+    height: 100vh; /* Fylder hele skærmen */
+    background-color: #f9f9f9; /* Lys baggrund */
+    margin: 0; /* Fjerner margin */
+    padding: 0; /* Fjerner padding */
+    overflow: hidden; /* Forhindrer scrolling */
+}
+
+/* Container til opret bruger */
+.opret-bruger-container {
+    width: 70%; /* Fylder 70% af skærmens bredde */
+    max-width: 800px; /* Maksimal bredde */
+    height: auto; /* Tilpasser højden til indholdet */
+    padding: 20px; /* Indre afstand */
+    background-color: rgba(0, 0, 0, 0.85); /* Sort med gennemsigtighed */
+    border-radius: 8px; /* Runde hjørner */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Skyggeeffekt */
+    color: #ffffff; /* Hvid tekst */
+    font-family: sans-serif; /* Standard skrifttype */
+    margin-left: -1020px;
+    margin-top: 55px;
+    
+}
+
+/* Overskrift til formularen */
+.opret-bruger-container h2 {
+    text-align: center; /* Centrerer overskriften */
+    margin-bottom: 30px; /* Afstand til næste element */
+}
+
+/* Inputfelter */
+.input-boxFirstName,
+.input-boxEmail,
+.input-boxPhoneNumber,
+.input-boxPassword {
+    margin-bottom: 60px; /* Afstand mellem inputfelterne */
+   
+}
+/* tekst på overskifter */
+label {
+    display: block; /* Gør label til en blok for at placere den over inputfeltet */
+    margin-bottom: 13px; /* Afstand til inputfeltet */
+    font-weight: bold; /* Gør teksten fed */
+}
+
+/*  Stil for inputfelter */
+.input-boxFirstName input,
+.input-boxEmail input,
+.input-boxPhoneNumber input,
+.input-boxPassword input {
+    width: 100%; /* Fylder hele bredden af containeren */
+    padding: 10px; /* Indre afstand */
+    background-color: #0d1b2a; /* Mørkeblå baggrund (som i login) */
+    color: #ffffff; /* Hvid tekst */
+    border: 1px solid #5a5a5a; /* Grå kant */
+    border-radius: 4px; /* Runde hjørner */
+    font-size: 16px; /* Standard tekststørrelse */
+    box-sizing: border-box; /* Sørger for, at padding ikke øger feltets bredde */
+}
+
+/* Knapper i containeren */
+/* Knappernes container */
+.box-knapper {
+    display: flex; /* Bruger flexbox */
+    flex-direction: column; /* Sørger for, at knapperne står oven på hinanden */
+    gap: 15px; /* Afstand mellem knapperne */
+    justify-content: center; /* Centrerer knapperne */
+    align-items: center; /* Centrerer knapperne horisontalt */
+    margin-top: 50px; /* Afstand fra inputfelterne */
+    width: 100%; /* Sørger for, at containeren fylder hele bredden */
+}
+
+.box-loginknap{
+    width: 100%; /* Fylder hele bredden */
+    padding: 12px; /* Indre afstand */
+    background-color: #000000; /* Sort baggrundsfarve */
+    color: white; /* Hvid tekst */
+    border: none; /* Fjerner standard kant */
+    border-radius: 4px; /* Runde hjørner */
+    font-size: 16px; /* Tekststørrelse */
+    cursor: pointer; /* Markør ændres til hånd ved hover */
+    transition: background-color 0.3s; /* Glidende overgang ved hover */
+}
+
+.box-opretbrugerknap {
+    width: 100%; /* Fylder hele bredden */
+    padding: 12px; /* Indre afstand */
+    background-color: #000000; /* Sort baggrundsfarve */
+    color: white; /* Hvid tekst */
+    border: none; /* Fjerner standard kant */
+    border-radius: 4px; /* Runde hjørner */
+    font-size: 16px; /* Tekststørrelse */
+    cursor: pointer; /* Markør ændres til hånd ved hover */
+    transition: background-color 0.3s; /* Glidende overgang ved hover */
+    margin-top: -40px;
+}
+
+/* Hover-effekt for knappen */
+.box-opretbrugerknap:hover {
+    background-color: #21c954; /* Grøn baggrund ved hover */
+}
+
+/* Hover-effekt for knappen */
+.box-loginknap:hover{
+    background-color: #0d4bb8;
+}
+
+/* Fejlmeddelelse */
+.error-message {
+    color: red; /* Rød tekstfarve */
+    margin-bottom: 10px; /* Afstand til næste element */
+    font-size: 14px; /* Mindre tekststørrelse */
+}
+
+/* Succesmeddelelse */
+.success-message {
+    color: green; /* Grøn tekstfarve */
+    margin-bottom: 10px; /* Afstand til næste element */
+    font-size: 14px; /* Mindre tekststørrelse */
+}

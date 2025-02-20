@@ -1,0 +1,149 @@
+<div class="admin-container">
+  <!-- Dette er en container, der lægger admin-dashboard og action-box ved siden af hinanden -->
+  <div class="admin-dashboard">
+    <!-- Admin-dashboard sektionen, hvor du kan oprette forfattere, genre og bøger -->
+    <h1>Admin Panel</h1>
+    <p>Her kan du oprette en ny forfatter, genre og bog.</p>
+
+    <!-- Form til oprettelse af en ny forfatter -->
+    <h2>Opret Forfatter</h2>
+    <form class="author-form" (ngSubmit)="createAuthor()">
+      <div class="form-group">
+        <!-- Inputfelt til fornavn -->
+        <label for="firstName">Fornavn:</label>
+        <input
+          id="firstName"
+          [(ngModel)]="author.firstName"
+          name="firstName"
+          required
+          placeholder="Indtast forfatterens fornavn"
+        />
+      </div>
+      <div class="form-group">
+        <!-- Inputfelt til efternavn -->
+        <label for="lastName">Efternavn:</label>
+        <input
+          id="lastName"
+          [(ngModel)]="author.lastName"
+          name="lastName"
+          required
+          placeholder="Indtast forfatterens efternavn"
+        />
+      </div>
+      <!-- Knap til at indsende forfatterens data -->
+      <button type="submit">Opret Forfatter</button>
+    </form>
+
+    <!-- Viser succes- eller fejlmeddelelser -->
+    <div *ngIf="successMessage" class="success-message">{{ successMessage }}</div>
+    <div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
+    <!-- Form til oprettelse af en ny genre -->
+    <h2>Opret Genre</h2>
+    <form class="genre-form" (ngSubmit)="createGenre()">
+      <div class="form-group">
+        <!-- Inputfelt til genre navn -->
+        <label for="genreName">Genrens navn:</label>
+        <input
+          id="genreName"
+          [(ngModel)]="genre.genreName"
+          name="genreName"
+          required
+          placeholder="Indtast genrens navn"
+        />
+      </div>
+      <!-- Knap til at indsende genre data -->
+      <button type="submit">Opret Genre</button>
+    </form>
+
+    <!-- Viser succes- eller fejlmeddelelser -->
+    <div *ngIf="genreSuccessMessage" class="success-message">{{ genreSuccessMessage }}</div>
+    <div *ngIf="genreErrorMessage" class="error-message">{{ genreErrorMessage }}</div>
+
+    <!-- Form til oprettelse af en ny bog -->
+    <h2>Opret Bog</h2>
+    <form class="book-form" (ngSubmit)="createBookWithGenres()">
+      <div class="form-group">
+        <!-- Inputfelt til bogens titel -->
+        <label for="title">Bogens titel:</label>
+        <input
+          id="title"
+          [(ngModel)]="book.title"
+          name="title"
+          required
+          placeholder="Indtast bogens titel"
+        />
+      </div>
+
+      <div class="form-group">
+        <!-- Inputfelt til bogens udgivelsesdato -->
+        <label for="releaseDate">Udgivelsesdato:</label>
+        <input
+          id="releaseDate"
+          type="date"
+          [(ngModel)]="book.releaseDate"
+          name="releaseDate"
+          required
+        />
+      </div>
+
+      <div class="form-group">
+        <!-- Inputfelt til at vælge en fil (bogcover) -->
+        <label for="coverImage">Vælg et bogcover:</label>
+        <input
+          id="coverImage"
+          type="file"
+          (change)="onFileSelected($event)"
+          accept="image/*"
+        />
+      </div>
+
+      <div class="form-group">
+        <!-- Dropdown til at vælge en forfatter -->
+        <label for="author">Forfatter:</label>
+        <select id="author" [(ngModel)]="book.authorId" name="author" required>
+          <option *ngFor="let author of authors" [value]="author.authorId">
+            {{ author.firstName }} {{ author.lastName }}
+          </option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <!-- Dropdown med mulighed for at vælge flere genrer -->
+        <label for="genres">Genrer:</label>
+        <p>Tip: Hold Ctrl (Cmd på Mac) for at vælge flere genrer.</p>
+        <select
+          id="genres"
+          [(ngModel)]="selectedGenreIds"
+          name="genres"
+          multiple
+          required
+        >
+          <option *ngFor="let genre of genres" [value]="genre.genreId">
+            {{ genre.genreName }}
+          </option>
+        </select>
+      </div>
+
+      <!-- Knap til at indsende bogens data -->
+      <button type="submit">Opret Bog</button>
+    </form>
+
+    <!-- Viser succes- eller fejlmeddelelser -->
+    <div *ngIf="bookSuccessMessage" class="success-message">{{ bookSuccessMessage }}</div>
+    <div *ngIf="bookErrorMessage" class="error-message">{{ bookErrorMessage }}</div>
+  </div>
+
+  <!-- Action-box til forskellige handlinger -->
+  <div class="action-box">
+    <h2>Handlinger</h2>
+    <!-- Knap til at navigere til en side, der viser brugere -->
+    <button class="se-brugereKnap" (click)="goToSeBrugere()">Se brugere</button>
+    <!-- Knap til at navigere til en side, der viser bøger -->
+    <button class="se-Bøger" (click)="goToSeBooks()">Se bøger</button>
+    <!-- Knap til at navigere til en side, der viser genrer -->
+    <button class="se-genres" (click)="goToSeGenres()">Se genre</button>
+    <!-- Knap til at navigere til en side, der viser forfattere -->
+    <button class="se-forfattere" (click)="goToseForfatter()">Se forfattere</button>
+  </div>
+</div>

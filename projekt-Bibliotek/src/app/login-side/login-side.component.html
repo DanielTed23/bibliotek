@@ -1,0 +1,37 @@
+<!--  Wrapper til hele login-siden -->
+<div class="login-page">
+
+<!--  Login-container: Omslutter hele login-formularen -->
+<div class="login-container">
+  
+  <!--  Overskrift -->
+  <h1>Log ind</h1>
+
+  <!--  Email Input -->
+  <div class="input-boxEmail"> <!-- Ny klasse til email-input -->
+    <label for="email">Email:</label>
+    <input type="text" id="email" [(ngModel)]="email" placeholder="Indtast Email" />
+  </div>
+
+  <!--  Adgangskode Input -->
+  <div class="input-boxPass"> <!-- Ny klasse til adgangskode-input -->
+    <label for="password">Adgangskode:</label>
+    <input type="password" id="password" [(ngModel)]="password" placeholder="Indtast adgangskode" />
+  </div>
+
+ <!--  Knapper (Log ind & Opret Bruger) -->
+  <div class="box-knapper">
+  <!--  Log ind-knap - Kalder login()-funktionen i TypeScript -->
+  <button class="box-loginknap" (click)="login()">Log ind</button>
+
+  <!--  Opret Bruger-knap - Navigerer til opret-bruger siden -->
+  <button class="box-opretbrugerknap" routerLink="/opret-bruger">Opret Bruger</button>
+  
+  </div>
+
+   <!-- Fejlbeskeden vises kun, når errorMessage er sat -->
+   <p *ngIf="errorMessage" class="error-message">{{ errorMessage }}</p>
+  </div>
+
+
+</div>

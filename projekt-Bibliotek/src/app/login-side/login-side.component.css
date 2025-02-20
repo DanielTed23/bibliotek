@@ -1,0 +1,108 @@
+/*  Overordnet layout - Omslutter hele login-boksen */
+
+.login-container {
+  width: 100%; /* Sørger for, at boksen altid er fleksibel og tilpasser sig skærmen */
+  max-width: 550px; /* Sætter en maksimal bredde, så den ikke bliver for stor */
+  padding: 20px; /* Tilføjer indre afstand, så indholdet ikke rører kanterne */
+  background-color: rgba(0, 0, 0, 0.85); /* Sort baggrund med 85% gennemsigtighed, så baggrunden kan anes lidt */
+  border-radius: 8px; /* Afrundede hjørner for et blødere design */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Tilføjer en skyggeeffekt for at give en let "løftet" effekt */
+  color: #ffffff; /* Hvid tekstfarve for bedre kontrast på den mørke baggrund */
+  font-family: sans-serif; /* Bruger en simpel og letlæselig skrifttype */
+  text-align: center; /* Centrerer alt tekst inde i boksen */
+}
+
+
+/*  Email input boks */
+.input-boxEmail {
+  margin-bottom: 15px; /* Afstand mellem elementer */
+  text-align: left; /* Justerer tekst til venstre */
+}
+
+/*  Adgangskode input boks */
+.input-boxPass {
+  margin-bottom: 15px; /* Afstand mellem elementer */
+  text-align: left; /* Justerer tekst til venstre */
+}
+
+/*  Stil for begge labels (Email & Adgangskode) */
+.input-boxEmail label,
+.input-boxPass label {
+  display: block; /* Sørger for, at label vises som en blok */
+  font-weight: bold; /* Gør teksten fed */
+  margin-bottom: 5px; /* Afstand til inputfeltet */
+  color: #ffffff; /* Hvid tekst */
+}
+
+/*  Stil for begge inputfelter */
+.input-boxEmail input,
+.input-boxPass input {
+  width: 100%; /* Gør inputfeltet bredt */
+  padding: 8px; /* Indre afstand */
+  background-color: #0d1b2a; /* Mørkeblå baggrund */
+  color: #ffffff; /* Hvid tekst */
+  border: 1px solid #5a5a5a; /* Grå kant */
+  border-radius: 4px; /* Runde hjørner */
+  font-size: 14px; /* Standard tekststørrelse */
+  box-sizing: border-box; /* Sørger for, at padding ikke øger feltets bredde */
+}
+
+/*  Effekt når input-feltet er aktivt */
+.input-boxEmail input:focus,
+.input-boxPass input:focus {
+  outline: none; /* Fjerner standard blå kant */
+  border-color: #0d4bb8; /* Blå kant når feltet er aktivt */
+}
+
+/*  Knap-gruppe - Omslutter begge knapper */
+.box-knapper {
+  display: flex; /* Aktiverer Flexbox */
+  justify-content: space-between; /* Sørger for afstand mellem knapperne */
+  gap: 10px; /* Mellemrum mellem knapperne */
+}
+
+/*  Log ind-knap og  Opret Bruger-knap (Fælles styling) */
+.box-loginknap,
+.box-opretbrugerknap {
+  flex: 1; /* Gør knapperne fleksible og ens i størrelse */
+  padding: 10px; /* Indre afstand */
+  background-color: #000000; /* Sort baggrund */
+  color: white; /* Hvid tekst */
+  border: 1px solid #5a5a5a; /* Grå kant */
+  border-radius: 4px; /* Runde hjørner */
+  font-size: 14px; /* Standard tekststørrelse */
+  cursor: pointer; /* Markør ændres til en hånd ved hover */
+  transition: background-color 0.3s; /* Glidende overgangseffekt */
+}
+
+/*  Log ind-knap hover-effekt */
+.box-loginknap:hover {
+  background-color: #0d4bb8; /* Mørkere blå ved hover */
+}
+
+/*  Opret Bruger-knap hover-effekt */
+.box-opretbrugerknap:hover {
+  background-color: #21c954; /* Grøn ved hover */
+}
+
+.login-page {
+  position: absolute; /* Placerer elementet relativt til dets nærmeste positionerede forælder */
+  top: 0; /* Fastgør toppen af .login-page til toppen af viewporten */
+  left: 0; /* Fastgør venstre kant af .login-page til venstre kant af viewporten */
+  width: 100vw; /* Fylder hele bredden af viewporten (100% af vinduets bredde) */
+  height: 100vh; /* Fylder hele højden af viewporten (100% af vinduets højde) */
+  background-image: url('/assets/images/loginpic.jpg'); /* Indsætter baggrundsbilledet */
+  background-size: cover; /* Gør billedet stort nok til at fylde hele elementet uden gentagelse */
+  background-position: center; /* Centrerer baggrundsbilledet i midten af skærmen */
+  background-repeat: no-repeat; /* Sørger for, at baggrundsbilledet ikke gentages */
+  background-attachment: fixed; /* Låser baggrunden, så den ikke ruller med indholdet */
+  display: flex; /* Bruger flexbox til at centrere login-container */
+  align-items: center; /* Centrerer indholdet lodret (vertikalt) */
+  justify-content: center; /* Centrerer indholdet horisontalt */
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+  margin-top: 10px;
+}

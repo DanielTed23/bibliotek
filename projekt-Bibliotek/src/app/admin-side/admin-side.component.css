@@ -1,0 +1,224 @@
+/* 
+* admin-container: En flex-container der arrangerer admin-dashboard og action-box side om side
+* gap: Skaber et mellemrum mellem de to bokse
+*/
+.admin-container {
+  display: flex; /* Lægger admin-dashboard og action-box på linje */
+  gap: 20px; /* Afstand mellem sektionerne */
+}
+
+
+/* 
+* admin-dashboard: Stilen for hovedsektionen (admin-dashboard) hvor alt indhold er placeret.
+* flex: 1 sikrer, at den fylder resten af tilgængelig plads ved siden af action-box
+* margin-top: Justerer afstanden fra toppen af siden til boksen
+*/
+.admin-dashboard {
+  flex: 1; /* Fylder resten af bredden */
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 70px;
+}
+
+
+/* 
+* action-box: Stilen for boksen til højre der indeholder ekstra knapper.
+* width: Angiver en fast bredde, så den ikke ændrer størrelse afhængigt af indholdet.
+* margin-top: Sikrer at den er på linje med admin-dashboard.
+*/
+.action-box {
+  width: 300px; /* Fast bredde */
+  padding: 20px;
+  background-color: #e9f7fa;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-top: 65px;
+}
+
+
+/* 
+* action-box button: Stilen for knapper i action-box.
+* display: block sikrer, at hver knap fylder hele boksen og vises under hinanden.
+*/
+.action-box button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
+/* 
+* action-box button:hover: Hover-effekten for knapperne. Ændrer baggrundsfarve når musen er over dem.
+*/
+.action-box button:hover {
+  background-color: #0056b3;
+}
+
+
+
+/* 
+* admin-dashboard h1: Stilen for overskriften i admin-dashboard.
+* text-align: center centrerer teksten.
+*/
+.admin-dashboard h1 {
+  text-align: center; /* Centrerer teksten i h1 */
+  font-size: 24px; /* Størrelsen af overskriften */
+  color: #333; /* Mørkegrå tekstfarve for kontrast */
+  margin-bottom: 20px; /* Plads under overskriften, så den ikke rører næste element */
+}
+
+
+
+/* 
+* admin-dashboard p: Stilen for teksten i admin-dashboard.
+* margin-bottom: Sikrer lidt afstand til næste element.
+*/
+.admin-dashboard p {
+  text-align: center; /* Centrerer teksten i p-elementet */
+  color: #666; /* Lysere grå farve til sekundær tekst */
+  font-size: 16px; /* Tekststørrelsen for beskrivelsen */
+  margin-bottom: 5px; /* Plads under teksten til næste element */
+}
+
+
+
+/* 
+* author-form, genre-form: Stilen for formularerne til at oprette forfattere og genrer.
+* flex-direction: column gør, at felterne vises lodret efter hinanden.
+*/
+.author-form, .genre-form {
+  display: flex; /* Gør formularen fleksibel for lettere justering */
+  flex-direction: column; /* Arrangerer elementerne lodret */
+  gap: 10px; /* Lægger mellemrum mellem hvert element i formularen */
+}
+
+
+
+/* 
+* form-group label: Stilen for etiketterne (label) over inputfelterne.
+* margin-bottom: Sikrer lidt afstand til inputfeltet.
+*/
+.form-group label {
+  font-weight: bold; /* Gør etiketterne fede, så de er nemme at læse */
+  color: #333; /* Mørk tekstfarve til etiketter */
+  margin-bottom: 5px; /* Lidt plads under etiketten til inputfeltet */
+}
+
+
+
+/* 
+* form-group input: Stilen for tekstinputfelterne.
+* padding: Gør felterne lettere at skrive i.
+*/
+.form-group input {
+  padding: 5px; /* Indre afstand i inputfeltet for bedre læsbarhed */
+  font-size: 16px; /* Størrelsen på tekst i inputfeltet */
+  border: 1px solid #ccc; /* Lys grå kant omkring inputfeltet */
+  border-radius: 4px; /* Lidt afrundede hjørner for et blødt udseende */
+  background-color: #fff; /* Hvid baggrund så teksten står klart */
+}
+
+
+
+/* 
+* form-group input:focus: Effekt når feltet er aktivt (fokus).
+* box-shadow: Tilføjer en blå glød omkring feltet for at indikere fokus.
+*/
+.form-group input:focus {
+  outline: none; /* Fjern standard outline på fokus */
+  border-color: #007BFF; /* Ændr kantfarve til blå for at indikere fokus */
+  box-shadow: 0 0 4px rgba(0, 123, 255, 0.5); /* Lægger en blød blå glød rundt om feltet */
+}
+
+
+
+/* 
+* button: Stilen for alle knapper.
+* padding: Gør knapperne behagelige at klikke på.
+* transition: Glidende overgang på farveændringer.
+*/
+button {
+  padding: 10px 15px; /* Laver lidt indre afstand både horisontalt og vertikalt */
+  font-size: 16px; /* Skriftstørrelsen på knappen */
+  border: none; /* Fjerner standardkant på knapper */
+  border-radius: 4px; /* Lidt afrundede hjørner for et mere moderne look */
+  background-color: #007BFF; /* Blå baggrundsfarve */
+  color: white; /* Hvid tekst på knappen */
+  cursor: pointer; /* Skifter musen til en hånd for at indikere, at knappen er klikbar */
+  margin-top: 10px; /* Lægger lidt plads over knappen, så den ikke sidder tæt på inputfelterne */
+  transition: background-color 0.3s ease; /* Tilføjer en glidende overgang til baggrundsfarve ved hover */
+}
+
+
+
+/* 
+* button:hover: Effekt når musen holdes over knappen.
+* background-color: Ændrer farve til en mørkere blå.
+*/
+button:hover {
+  background-color: #0056b3; /* Ændrer baggrundsfarven til en mørkere blå, når man holder musen over knappen */
+}
+
+
+
+/* 
+* success-message: Stilen for succesmeddelelser.
+* background-color: Grøn baggrund for at indikere succes.
+*/
+.success-message {
+  margin-top: 10px; /* Lægger lidt plads over succesmeddelelsen */
+  padding: 10px; /* Indre afstand i boksen for bedre læsbarhed */
+  background-color: #DFF2BF; /* Lys grøn baggrund for at indikere succes */
+  color: #4F8A10; /* Grøn tekstfarve for succes */
+  border: 1px solid #D6E9C6; /* Diskret kant, der matcher baggrundens farvetone */
+  border-radius: 4px; /* Afrundede hjørner for at matche resten af designet */
+}
+
+
+
+/* 
+* error-message: Stilen for fejlmeddelelser.
+* background-color: Rød baggrund for at indikere fejl.
+*/
+.error-message {
+  margin-top: 10px; /* Lægger lidt plads over fejlmeddelelsen */
+  padding: 10px; /* Indre afstand i boksen for bedre læsbarhed */
+  background-color: #F2DEDE; /* Lys rød baggrund for at indikere fejl */
+  color: #A94442; /* Rød tekstfarve for fejl */
+  border: 1px solid #EBCDCD; /* Diskret kant, der matcher baggrundens farvetone */
+  border-radius: 4px; /* Afrundede hjørner for at matche resten af designet */
+}
+
+
+
+/* 
+* select[multiple]: Stil for multi-selekt bokse.
+* width: Sikrer at boksen fylder hele bredden af dens container.
+*/
+select[multiple] {
+  width: 100%; /* Sikrer, at boksen fylder hele bredden af dens container */
+  height: auto; /* Justerer højden automatisk efter indholdet */
+  padding: 10px; /* Laver lidt plads inde i boksen for bedre læsbarhed */
+  border: 1px solid #ccc; /* Tilføjer en lys grå kant rundt om boksen */
+  border-radius: 4px; /* Gør hjørnerne lidt afrundede for et blødere udseende */
+  background-color: #f9f9f9; /* Lys grå baggrundsfarve for at fremhæve indholdet */
+}
+
+
+
+/* 
+* select[multiple] option: Stil for hver option i multi-selekt bokse.
+* padding: Laver afstand inde i hver option.
+*/
+select[multiple] option {
+  padding: 5px; /* Lægger lidt plads inde i hver option for bedre læsbarhed */
+  margin: 2px 0; /* Tilføjer en lille afstand mellem hver option */
+}

@@ -1,0 +1,27 @@
+<div class="user-list">
+    <table>
+      <thead>
+        <tr>
+          <th>UserID</th>
+          <th>First Name</th>
+          <th>Email</th>
+          <th>Phone Number</th>
+          <th>Is Admin</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+            <td>{{ user.userId }}</td>
+            <td>{{ user.firstName }}</td>
+            <td>{{ user.email }}</td>
+            <td>{{ user.phoneNumber }}</td>
+            <td>{{ user.isAdmin }}</td>
+            <td>
+            <button (click)="deleteUser(user.userId)">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

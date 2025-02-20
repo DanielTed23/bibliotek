@@ -1,0 +1,56 @@
+<!-- Topbar - Øverste navigationsmenu -->
+<div class="topbar">
+  <!-- Tilbage-knap -->
+  <button class="topbar-btnTilbage" (click)="goBack()">
+    <!-- Wrapper til ikonet -->
+    <span class="icon">
+      <i class="fa fa-arrow-left"></i> <!-- Ikon for tilbage -->
+    </span>
+    <!-- Tekst på knappen -->
+    <span class="text">Tilbage</span>
+  </button>
+
+  <!-- Log In knap -->
+  <button class="topbar-btnLogInd" routerLink="/login">
+    <!-- Wrapper til ikonet -->
+    <span class="icon">
+      <i class="fa fa-user"></i> <!-- Ikon for Log In -->
+    </span>
+    <!-- Tekst på knappen -->
+    <span class="text">Log In</span>
+  </button>
+
+  <!-- Åbningstider knap -->
+  <button class="topbar-btnUr" (click)="AAbenBjaelke()">
+    <!-- Wrapper til ikonet -->
+    <span class="icon">
+      <i class="fa fa-clock"></i> <!-- Ikon for ur -->
+    </span>
+    <!-- Tekst på knappen -->
+    <span class="text">Åbningstider</span>
+  </button>
+</div>
+
+<!-- bjælke - Udtræksmenu med åbningstider -->
+<div class="Bjaelke" [class.open]="isBjaelkeOpen">
+  <!-- Header for bjælke -->
+  <div class="Bjaelke-header">
+    <span>Åbningstider</span>
+    <!-- Luk-knap til bjælke -->
+    <button class="BjaelkeTilbage-btn" (click)="AAbenBjaelke()">x</button>
+  </div>
+
+  <!-- Tekstindhold, der viser åbningstider -->
+  <div class="Bjaelke-Text">
+    <p>Mandag: 09:00 - 18:00</p> 
+    <p>Tirsdag: 09:00 - 17:00</p> 
+    <p>Onsdag: 09:00 - 17:00</p> 
+    <p>Torsdag: 09:00 - 17:00</p> 
+    <p>Fredag: 09:00 - 16:00</p> 
+    <p>Lørdag: 10:00 - 14:00</p> 
+    <p>Søndag: Lukket</p> 
+  </div>
+</div>
+
+<!-- Routing Outlet - Viser dynamisk de valgte sider -->
+<router-outlet></router-outlet>

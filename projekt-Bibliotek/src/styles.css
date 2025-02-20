@@ -1,0 +1,5 @@
+body {
+  margin: 3px; /* Fjern margin helt */
+  padding: 0; /* Fjern eventuel padding */
+  overflow: hidden; /* Forhindrer scrolling */
+}
